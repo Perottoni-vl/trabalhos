@@ -58,7 +58,8 @@ ALTER TABLE compra_produto ADD FOREIGN KEY(ID_compra) REFERENCES compra (ID_comp
 
 --questao 1 parte 2
 --mostrar o banco e as tabelas. Ambos foram criados pelo código do br_modelo (que está aqui em cima)
---codigo usado na população do bando
+--codigo usado na população do banco:
+	
 INSERT INTO public.atendente(
 	id_atendente, matricula, cpf, rg, pin, telefone, nome_atendente, email, endereco, cep)
 	VALUES (1, 01, '32122377156', '33514119', '12345', '998050404', 'arthur', 'arthur@gmail.com', 'rua dos lirios', '78110000'),
@@ -114,22 +115,7 @@ FROM (
 ) sub;
 
 --questao 4 exercicio 1 (criar tabela 'estoque', porem ja existe)
-CREATE TABLE IF NOT EXISTS public.produto
-(
-    id_produto integer NOT NULL,
-    marca character varying(20) COLLATE pg_catalog."default",
-    descricao character varying(300) COLLATE pg_catalog."default",
-    valor_unitario numeric(5,2),
-    estoque integer,
-    CONSTRAINT produto_pkey PRIMARY KEY (id_produto)
-)
 
-TABLESPACE pg_default;
-
-ALTER TABLE IF EXISTS public.produto
-    OWNER to postgres;
-
---ou
 ALTER TABLE produto ADD COLUMN estoque Integer;
 
 
