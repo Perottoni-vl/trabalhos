@@ -94,8 +94,7 @@ valor2 = int(input("Digite o segundo valor: "))
 maior = max(valor1, valor2)
 menor = min(valor1, valor2)
 
-maior/menor = valor3
-
+valor3 = maior / menor
 print("O resultado da divisão do maior pelo menor é:", valor3)
 
 #exercício_8 (esse eu não consegui fazer, tive que usar ferramentas externas para resolver. 
