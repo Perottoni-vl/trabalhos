@@ -45,7 +45,7 @@ CEP Char(8)
 CREATE TABLE compra (
 forma_pagamento Varchar(10),
 vl_total Numeric(5,2),
-hora_pagamento Time stamp,
+hora_pagamento Timestamp,
 DT_compra Date,
 ID_compra Integer PRIMARY KEY,
 ID_cliente Integer,
@@ -58,8 +58,7 @@ ALTER TABLE compra_produto ADD FOREIGN KEY(ID_compra) REFERENCES compra (ID_comp
 
 --questao 1 parte 2
 --mostrar o banco e as tabelas. Ambos foram criados pelo código do br_modelo (que está aqui em cima)
---codigo usado na população do banco:
-	
+--codigo usado na população do bando
 INSERT INTO public.atendente(
 	id_atendente, matricula, cpf, rg, pin, telefone, nome_atendente, email, endereco, cep)
 	VALUES (1, 01, '32122377156', '33514119', '12345', '998050404', 'arthur', 'arthur@gmail.com', 'rua dos lirios', '78110000'),
@@ -80,7 +79,22 @@ INSERT INTO public.cliente(
 	       (41, 'Miojo', 'de carne', '1.99', '100'),
            (51, 'óleo', 'seila', '9.99', '100');
 
---questao 3 exercicio 1
+INSERT INTO public.compra(
+    forma_pagamento, vl_total, hora_pagamento, dt_compra, id_compra, id_cliente, id_atendente)
+VALUES
+    ('crédito', 45, '2025-10-30 11:32:31', '2025-10-30', 1, 1, 1),
+    ('dinheiro', 5.97, '2025-10-30 13:43:17', '2025-10-30', 2, 2, 2),
+    ('débito', 29.97, '2025-10-30 09:12:48', '2025-10-30', 3, 3, 3);
+
+INSERT INTO public.compra_produto(
+	quantde_produto, vl_parcial, id_produto, id_compra)
+	VALUES (3, 45, 11, 1),
+           (3, 5.97, 41, 2),
+	       (3, 29.97, 51, 3);
+
+
+
+--questao 3 exercicio 1 
 SELECT nome_cliente,
        nome_atendente,
        vl_total
@@ -103,7 +117,7 @@ SELECT DT_compra
  FROM compra
  WHERE DT_compra > '2025/10/01'
 
- --questao 3 exercicio 4 
+ --questao 3 exercicio 4 (listar clientes que fizeram mais de uma compra) 
 
  SELECT COUNT(*) AS total_cliente
 FROM (
@@ -122,7 +136,7 @@ ALTER TABLE produto ADD COLUMN estoque Integer;
 --questao 4 exercicio 2 (adicionar coluna 'estoque' na tabela 'produto', porem ja existe)
 UPDATE produto
 SET estoque = estoque + 100
-WHERE ID = 11;
+WHERE id_produto = 11;
 --apenas mudar o ID para cada produto
 
 --questao 4 exercicio 3 (mudar email, que já está mudado)
@@ -161,3 +175,6 @@ GROUP BY
 ORDER BY
     total_compra DESC;
 
+
+{tudo certinho, só copiar e colar na hora se quiser criar um banco novo
+}

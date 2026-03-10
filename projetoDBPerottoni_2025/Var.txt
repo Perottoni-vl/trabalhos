@@ -1,0 +1,64 @@
+Var
+
+aceitou: logico
+respostausuario: caractere
+
+Inicio
+
+escreval("TERMOS DE USO DO PRODUTO")
+escreval("Aceitando você concorda com ...")
+escreval("Você aceita os termos acima? S/N")
+
+leia (respostausuario)
+se maiusc(respostausuario) = "S" entao
+  aceitou <- verdadeiro
+ senao
+  aceitou <- falso
+fimse
+
+se nao aceitou entao
+escreval("Você não aceitou os termos. Não podemos prosseguir")
+ senao
+ escreval("Termos aceitos.")
+ fimse
+
+*********************************************
+Var
+
+num:real
+
+Var
+   numero:inteiro
+
+Inicio
+   escreva("Digite um número: ")
+   leia (numero)
+
+   se numero > 0 entao
+      escreval("O número é positivo")
+   senao
+      se numero < 0 entao
+         escreval("O número é negativo")
+         senao
+            escreval("O número é zero.")
+         fimse
+      fimse
+Fimalgoritmo
+
+****************************
+Var
+num:inteiro
+gestante:caractere
+
+Inicio
+escreval("Qual sua idade?")
+leia (num)
+escreval("È gestante? S/N")
+leia (gestante)
+
+se (num >=60) ou (gestante = "S") entao
+escreval("Está apto/a para o atendimento preferencial")
+senao
+escreval("Não está apto/a para o atendimento preferencial")
+
+fimse
