@@ -1,16 +1,13 @@
-
-
-
-
+import mysql.connector
+from mysql.connector import Error
 
 def conectar_banco():
     try:
-        # Configurações de conexão (ajuste conforme seu banco)
         conexao = mysql.connector.connect(
             host='localhost',
-            database='escola', # O banco deve existir ou ser criado
-            user='root',       # Usuário padrão
-            password=''        # Sua senha do MySQL
+            database='escola',
+            user='root',
+            password=''  # coloque sua senha, se houver
         )
         return conexao
     except Error as e:
@@ -28,6 +25,7 @@ def criar_tabela(conexao):
         )
     """)
     conexao.commit()
+    cursor.close()
 
 def cadastrar_aluno():
     conn = conectar_banco()
@@ -40,13 +38,12 @@ def cadastrar_aluno():
         data_nasc = input("Data de Nascimento (DD/MM/AAAA): ").strip()
         cpf = input("CPF (apenas números): ").strip()
 
-        # Comando SQL para inserção
         sql = "INSERT INTO alunos (nome, data_nascimento, cpf) VALUES (%s, %s, %s)"
         valores = (nome, data_nasc, cpf)
 
         try:
             cursor.execute(sql, valores)
-            conn.commit() # Salva as alterações
+            conn.commit()
             print(f"\nSucesso! {cursor.rowcount} registro(s) inserido(s).")
         except Error as e:
             print(f"Erro ao inserir dados: {e}")
@@ -56,4 +53,5 @@ def cadastrar_aluno():
 
 if __name__ == "__main__":
     cadastrar_aluno()
+
 
