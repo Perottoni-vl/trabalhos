@@ -1,0 +1,16 @@
+
+opcao = int(input("Digite uma opção de 1 a 4: "))
+
+match opcao:
+    case 1:
+        print("Inserir")
+    case 2:
+        print("Alterar")
+    case 3:
+        print("Excluir")
+    case 4:
+        print("Consultar")
+    case _:
+        print("Opção inválida")
+
+
