@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Primeiro Site</title> 
+    
+    <style>
+        /* TUDO O QUE É ESTILO FICA AQUI DENTRO */
+        body {
+            background-color: #dce2ec; 
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column; /* Organiza um embaixo do outro */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .foto-perfil {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Deixa a foto redonda */
+            border: 5px solid white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 20px; /* Espaço entre a foto e o título */
+        }
+
+        h1 {
+            background-color: rgb(236, 211, 142);
+            color: #1c1e21;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-left: 5px solid #0b2d9b;
+            margin-bottom: 20px; /* Espaço entre o título e o botão */
+        }
+
+        .meu-botao {
+            background-color: #0084ff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-decoration: none; /* Isso tira o sublinhado azul que os links têm por padrão */
+            display: inline-block; /* Garante que o link se comporte como um botão */
+        }
+
+        .meu-botao:hover {
+            background-color: #0056b3;
+            transform: scale(1.1); /* Efeito de crescer ao passar o mouse */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Chama caralho</h1>
+    
+    <a href="https://www.instagram.com/perottoni_vl" target="_blank" class="meu-botao">
+    Me siga no Instagram
+</a>
+</body>
+</html>
