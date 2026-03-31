@@ -10,7 +10,7 @@ def conectar_banco():
         # Tente escrever o nome do banco sem aspas extras primeiro
         # Se o erro persistir, o problema pode estar no 'host' ou na 'senha'
         conexao = psycopg2.connect(
-            host="127.0.0.1", 
+            host="127.0.0.1", # Usar o IP local evita erros de decodificação de nome
             database="Teste do Arthur",
             user="postgres",
             password="12345",
