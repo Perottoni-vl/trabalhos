@@ -1,0 +1,12 @@
+import math
+
+raio = float(input("Digite o raio da base do cilindro: "))
+altura = float(input("Digite a altura do cilindro: "))
+math.pi
+
+area_base = math.pi * (raio ** 2)
+area_lateral = 2 *math.pi * raio * altura
+
+area_total = 2 * area_base + area_lateral
+
+print("A área total do cilindro é: ", area_total)

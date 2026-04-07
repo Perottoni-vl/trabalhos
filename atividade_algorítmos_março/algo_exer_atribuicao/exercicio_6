@@ -1,0 +1,6 @@
+lado_a = float(input("Digite o valor do primeiro lado: "))
+lado_b = float(input("Digite o valor do segundo lado: "))
+ 
+hipotenusa = (lado_a ** 2 + lado_b ** 2) ** 0.5 
+
+print("O valor da hipotenusa é: ", hipotenusa)

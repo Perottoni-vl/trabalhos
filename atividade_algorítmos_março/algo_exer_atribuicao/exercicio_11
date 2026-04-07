@@ -1,0 +1,10 @@
+import math
+
+raio_cone = float(input("Digite o raio da base do cone: "))
+altura_cone = float(input("Digite a altura do cone: "))
+pi = math.pi
+
+area_base = pi * (raio_cone ** 2) ##famoso pirr
+volume = area_base * altura_cone / 3
+
+print("O volume do cone é: ", volume)   

@@ -1,0 +1,8 @@
+valor_a = float(input("Digite o valor de A: "))
+valor_b = float(input("Digite o valor de B: "))
+valor_c = float(input("Digite o valor de C: "))
+valor_d = float(input("Digite o valor de D: "))
+
+media = (valor_a * 7 + valor_b * 3 + valor_c * 4 + valor_d * 2) / 16 
+
+print("O valor da média é: ", media)

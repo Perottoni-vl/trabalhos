@@ -1,0 +1,7 @@
+print("Digite as faltas do primeiro semestre: ")
+faltas_1 = int(input())
+print("Digite as faltas do segundo semestre: ")
+faltas_2 = int(input()) 
+
+soma_faltas = faltas_1 + faltas_2
+print("A soma das faltas do aluno é: ", soma_faltas)

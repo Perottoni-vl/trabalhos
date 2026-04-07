@@ -1,0 +1,7 @@
+dias_atraso = int(input("Digite o número de dias de atraso: "))         
+prestacao = float(input("Digite o valor da prestação: "))
+taxa_de_juros = float(input("Digite a taxa de juros diária (em %): "))
+
+nova_prestacao = prestacao + (prestacao * (taxa_de_juros / 100) * dias_atraso) 
+
+print("O valor da nova prestação é: ", nova_prestacao)
